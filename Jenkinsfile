@@ -11,6 +11,7 @@ pipeline {
       steps {
         sh 'npm install --save-dev mini-css-extract-plugin'
         sh 'npm install'
+        sh 'npm i -D webpack @4.4.0'
       }
     }
   }
