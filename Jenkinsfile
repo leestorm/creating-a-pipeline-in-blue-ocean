@@ -9,8 +9,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''npm install --save-dev mini-css-extract-plugin
-npm install'''
+        sh 'npm install --save-dev mini-css-extract-plugin'
+        sh 'npm install'
       }
     }
   }
