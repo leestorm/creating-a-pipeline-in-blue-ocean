@@ -1,11 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:6-alpine'
-      args '-p 80:80'
-    }
-
-  }
+  agent none
   stages {
     stage('Build') {
       steps {
@@ -14,5 +8,13 @@ pipeline {
         sh 'npm install'
       }
     }
+    stage('Test') {
+      steps {
+        sh './jenkins/scripts/test.sh'
+      }
+    }
+  }
+  environment {
+    CI = 'true'
   }
 }
