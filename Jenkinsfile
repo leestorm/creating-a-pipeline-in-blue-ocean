@@ -9,9 +9,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        sh 'npm i -D webpack @4.4.0'
         sh 'npm install --save-dev mini-css-extract-plugin'
         sh 'npm install'
-        sh 'npm i -D webpack @4.4.0'
       }
     }
   }
